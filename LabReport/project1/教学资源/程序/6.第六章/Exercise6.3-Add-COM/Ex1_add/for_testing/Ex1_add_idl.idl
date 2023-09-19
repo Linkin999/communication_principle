@@ -1,0 +1,46 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "mwcomtypes.idl";
+
+[
+  object,
+  uuid("BD47DA4A-9C0A-4E21-B555-2A528A5E199B"),
+  dual,
+  helpstring("IClass1 Interface"),
+  pointer_default(unique)
+]
+interface IClass1 : IDispatch
+{
+  [propget, id(1), helpstring("property MWFlags")]
+  HRESULT MWFlags([out, retval] IMWFlags** ppvFlags);
+  [propput, id(1), helpstring("property MWFlags")]
+  HRESULT MWFlags([in] IMWFlags* pvFlags);
+
+  [id(2), helpstring("Method Ex1_add")]
+  HRESULT Ex1_add([in] long nargout, [in,out] VARIANT* sum, [in] VARIANT a, [in] VARIANT 
+                  b);
+
+
+  [id(3), helpstring("Method MCRWaitForFigures")]
+  HRESULT MCRWaitForFigures();
+};
+[
+  uuid("46FC5AD9-F4B1-49BC-ADEB-A36965198F55"),
+  version(1.0),
+  helpstring("Ex1_add 1.0 Type Library")
+]
+library Ex1_add
+{
+  importlib("stdole32.tlb");
+  importlib("stdole2.tlb");
+  importlib("mwcomutil.tlb");
+
+  [
+    uuid("DD7F3903-7F82-4B7B-96D2-789D5EEA284E"),
+    helpstring("Class1 Class")
+  ]
+  coclass Class1
+  {
+    [default] interface IClass1;
+  };
+};

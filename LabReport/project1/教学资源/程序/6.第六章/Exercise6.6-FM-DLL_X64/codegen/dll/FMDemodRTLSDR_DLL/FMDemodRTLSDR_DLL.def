@@ -1,0 +1,4 @@
+EXPORTS
+FMDemodRTLSDR_DLL
+FMDemodRTLSDR_DLL_initialize
+FMDemodRTLSDR_DLL_terminate

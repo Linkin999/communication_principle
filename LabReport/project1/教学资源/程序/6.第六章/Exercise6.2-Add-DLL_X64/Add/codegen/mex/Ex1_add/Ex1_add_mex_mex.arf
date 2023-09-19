@@ -1,0 +1,10 @@
+libemlrt.lib
+libcovrt.lib
+libut.lib
+libmwmathutil.lib
+/export:mexFunction
+/export:emlrtMexFcnProperties
+/export:Ex1_add
+/export:Ex1_add_initialize
+/export:Ex1_add_terminate
+/export:Ex1_add_atexit

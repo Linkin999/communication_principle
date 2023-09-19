@@ -1,0 +1,46 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "mwcomtypes.idl";
+
+[
+  object,
+  uuid("58186FD8-9EE7-4152-AE4E-D6E346172DE5"),
+  dual,
+  helpstring("IClass1 Interface"),
+  pointer_default(unique)
+]
+interface IClass1 : IDispatch
+{
+  [propget, id(1), helpstring("property MWFlags")]
+  HRESULT MWFlags([out, retval] IMWFlags** ppvFlags);
+  [propput, id(1), helpstring("property MWFlags")]
+  HRESULT MWFlags([in] IMWFlags* pvFlags);
+
+  [id(2), helpstring("Method FMDemodRTLSDR_COM")]
+  HRESULT FMDemodRTLSDR_COM([in] long nargout, [in,out] VARIANT* Baseband, [in] VARIANT 
+                            ISamples, [in] VARIANT QSamples);
+
+
+  [id(3), helpstring("Method MCRWaitForFigures")]
+  HRESULT MCRWaitForFigures();
+};
+[
+  uuid("9ADBFB2B-3F9D-4F66-B4D6-FD08AC4453A8"),
+  version(1.0),
+  helpstring("FMDemodRTLSDR_COM 1.0 Type Library")
+]
+library FMDemodRTLSDR_COM
+{
+  importlib("stdole32.tlb");
+  importlib("stdole2.tlb");
+  importlib("mwcomutil.tlb");
+
+  [
+    uuid("16488400-BA97-4B42-9AA9-8846F6D9DA11"),
+    helpstring("Class1 Class")
+  ]
+  coclass Class1
+  {
+    [default] interface IClass1;
+  };
+};

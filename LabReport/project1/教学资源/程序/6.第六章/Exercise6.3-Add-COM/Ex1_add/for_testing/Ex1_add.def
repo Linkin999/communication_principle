@@ -1,0 +1,7 @@
+LIBRARY Ex1_add_1_0.dll
+EXPORTS
+  DllGetClassObject PRIVATE
+  DllCanUnloadNow PRIVATE
+  DllRegisterServer PRIVATE
+  DllUnregisterServer PRIVATE
+  
